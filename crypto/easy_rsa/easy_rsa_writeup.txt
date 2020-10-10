@@ -1,0 +1,8 @@
+rsa에서 wiener 공격은 많이 알려져있고 hackcon, asis등 ctf에서 꽤나 자주 출제되는 문제입니다.
+
+위너 공격이란 rsa에서 e값이 매우 큰 경우 d값이 작을 확률이 높다는 성질을 이용한 공격입니다. 워낙 잘 알려져 있어서 소스코드가 조금만 검색해도 나옵니다.
+
+먼저 pem인증서파일에서 openssl을 통하여 n과 e를 구합니다.
+>> openssl rsa -pubin -inform PEM -text -noout -in publickey.pem
+
+그리고 구한 n, e, flag를 첨부한 RSAwienerHacker.py 코드에 넣으면 d값을 구해 복호화를 합니다.
