@@ -25,7 +25,6 @@ q^a % p = 673919365
 q^b % p = 992233731
 key = ?
 
-hint: Diffie-Hellman Algorithm
 
 Author: 2020270127
 ```
@@ -37,7 +36,7 @@ Description:
 ```
 Difficulty: Normal
 
-Who's the winner?
+bald
 
 Author: 2020270127
 ```
