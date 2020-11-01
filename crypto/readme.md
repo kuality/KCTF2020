@@ -7,7 +7,7 @@ Description:
 ```
 Difficulty: easy
 
-난 DolpHin이라는 노래가 좋던데.. 너도 같이 들을래? 'dOLPhin' 말이야
+난 DolpHin이라는 노래가 좋던데.. 너도 같이 들을래? 'dOLPhIN' 말이야
 
 Author: 2020270127
 ```
