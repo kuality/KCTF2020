@@ -33,7 +33,7 @@ gdb-peda$ x/100wx $esp
 
 이용할 포인터 : 0xffffcfb0
 
-#####과정
+##### 과정
 
 1. fsb를 이용하여 stack안의 적당한 포인터인 0xffffcfb0의 자리에 printf의 got로 값 modify
 
