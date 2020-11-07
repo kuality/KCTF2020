@@ -7,7 +7,7 @@ Description:
 ```
 Difficulty: easy
 
-DoH!
+D'oH!
 
 Author: cm9200
 ```
