@@ -49,4 +49,8 @@ fd를 수정하여 stdout의 file structure flag 부분으로 힙 메모리 영�
 
 ### ATTACK
 
-구한 라이브러리 베이스를 이용해서 one shot 가젯의 주소와 free_hook을 덮어 RCE를 획득할 수 있다.
+구한 라이브러리 베이스를 이용해서 one shot 가젯의 주소와 free_hook의 주소를 구한다.
+
+해제된 힙 청크에 fd를 수정하여 free_hook주소에 힙 영역을 할당 받도록 한다.
+
+그리고 free_hook에 one shot 가젯의 주소를 넣어주고 free를 진행할 경우 one shot이 실행되어 쉘을 획득할 수 있다.
