@@ -11,6 +11,20 @@ D'oH!
 
 Author: cm#9200
 ```
+
+### Easy-RSA
+
+Description:
+
+```
+Difficulty: easy
+
+Now who's the winner?
+
+Author: cm#9200
+```
+
+
 ### Korean
 
 Description:
@@ -25,17 +39,6 @@ Difficulty: Normal
 Author: cm#9200
 ```
 
-### Easy-RSA
-
-Description:
-
-```
-Difficulty: Normal
-
-Now who's the winner?
-
-Author: cm#9200
-```
 
 ### Time
 
