@@ -47,7 +47,6 @@ Description:
 ```
 Difficulty: Normal
 
-the time goes on
 hint : all pw is small letter
 
 Author: cm#9200
