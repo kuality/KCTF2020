@@ -12,6 +12,18 @@ D'oH!
 Author: cm#9200
 ```
 
+### Time
+
+Description:
+
+```
+Difficulty: easy
+
+hint : all pw is small letter
+
+Author: cm#9200
+```
+
 ### Easy-RSA
 
 Description:
@@ -23,7 +35,6 @@ Now who's the winner?
 
 Author: cm#9200
 ```
-
 
 ### Korean
 
@@ -40,15 +51,5 @@ Author: cm#9200
 ```
 
 
-### Time
 
-Description:
-
-```
-Difficulty: Normal
-
-hint : all pw is small letter
-
-Author: cm#9200
-```
 
