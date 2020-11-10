@@ -1,3 +1,4 @@
+//KCTF{you'll_kn0w_that_life_is_Timing}
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
