@@ -1,3 +1,14 @@
+### Startup
+
+Description:
+
+```
+Difficulty: none
+
+let's start!
+
+Author: cm#9200
+```
 
 
 ### Mod
@@ -17,21 +28,9 @@ Author: cm#9200
 Description:
 
 ```
-Difficulty: easy
+Difficulty: Normal
 
 hint : all pw is small letter
-
-Author: cm#9200
-```
-
-### Easy-RSA
-
-Description:
-
-```
-Difficulty: easy
-
-Now who's the winner?
 
 Author: cm#9200
 ```
@@ -50,6 +49,16 @@ Difficulty: Normal
 Author: cm#9200
 ```
 
+### RSA
+
+Description:
+
+```
+Difficulty: hard
+
+
+Author: cm#9200
+```
 
 
 
