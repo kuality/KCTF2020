@@ -1,15 +1,3 @@
-### Startup
-
-Description:
-
-```
-Difficulty: none
-
-UzBOVVJudFhZWEp0YVc1bmRYQmZWVkpmWW5KaGFXNTk=
-
-Author: cm#9200
-```
-
 
 ### Mod
 
