@@ -5,8 +5,8 @@
 
 
 char input[101];
-char flag[26] = "odngbieeneenslzndjfaalxjf"; //no guessing 
-int sleep_time = 2;
+char flag[11] = "odngbieene"; //no guessing 
+int sleep_time = 1;
 
 int check(char *flag, char *input) {
 	int count = 0;
