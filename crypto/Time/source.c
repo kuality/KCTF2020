@@ -35,9 +35,16 @@ int check(char *flag, char *input) {
 		return 1;
 }
 
+unsigned int init() {
+	system("/usr/bin/clear");
+	setvbuf(stdout, 0, 2, 0);
+  	setvbuf(stdin, 0, 2, 0);
+  	setvbuf(stderr, 0, 2, 0);
+	return alarm(0x1Fu);
+}
 
 int main(void) {
-	system("/usr/bin/clear");
+	init();
 	memset(input, 0, 0x65);
 	int ver = 0;
 	int cec = 0;
