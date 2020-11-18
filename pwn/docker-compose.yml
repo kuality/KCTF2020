@@ -1,8 +1,27 @@
 version: "3.8"
 services:
-  example:
+  eye:
     build:
-      context: ./binary
+      context: ./Eye_Of_Agamotto
       dockerfile: ./Dockerfile
     ports:
-      - "12352:12345"
+      - "12345:12345"
+  knote:
+    build:
+      context: ./KNOTE
+      dockerfile: ./Dockerfile
+    ports:
+      - "12346:12345"
+  monster:
+    build:
+      context: ./monster
+      dockerfile: ./Dockerfile
+    ports:
+      - "12347:12345"
+  eat:
+    build:
+      context: ./eat
+      dockerfile: ./Dockerfile
+    ports:
+      - "12348:12345"
+ 
