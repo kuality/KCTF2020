@@ -5,7 +5,7 @@ services:
       context: ./Eye_Of_Agamotto
       dockerfile: ./Dockerfile
     ports:
-      - "12345:12345"
+      - "12349:12345"
   knote:
     build:
       context: ./KNOTE
