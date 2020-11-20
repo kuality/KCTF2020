@@ -21,3 +21,12 @@ difficulty : easy
 ing? 스페이스바가 고장났나..
 
 author : cm#9200
+```
+
+### Free!!
+```
+difficulty : easy
+자유로운 비밀
+
+author : Chozen
+```
