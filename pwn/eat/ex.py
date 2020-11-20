@@ -8,6 +8,8 @@ read_got = 0x804a00c
 write_plt = 0x8048470
 write_got = 0x804a020
 pppr = 0x8048719
+#for server
+#system_offset = 0xa8810
 system_offset = 0x99af0
 bss = 0x804a040
 
