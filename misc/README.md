@@ -33,7 +33,7 @@ author : Chozen
 
 ### FUNFUN
 ```
-difficulty : easy
+difficulty : normal
 
 나는야 암산왕!!
 
