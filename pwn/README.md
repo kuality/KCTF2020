@@ -1,9 +1,6 @@
 
 
 ### Monster
-
-
-
 ```
 difficulty : normal
 
@@ -14,7 +11,6 @@ author : dubini0#8282
 
 
 ### 한입만
-
 ```
 difficulty : easy
 
@@ -23,4 +19,11 @@ difficulty : easy
 author : dubini0#8282
 ```
 
+### Eye_Of_Agamotto
+```
+difficulty : normal
 
+Dormammu! I've come to bargain.
+
+author : SParK
+```
