@@ -24,4 +24,9 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - "12348:12345"
- 
+  master:
+    build:
+      context: ./master_card
+      dockerfile: ./Dockerfile
+    ports:
+      - "12351:12345" 

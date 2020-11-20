@@ -1,8 +1,8 @@
 version: "3.8"
 services:
-  example:
+  funfun:
     build:
-      context: ./binary
+      context: ./FUNFUN
       dockerfile: ./Dockerfile
     ports:
       - "12352:12345"
