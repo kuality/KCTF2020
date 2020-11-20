@@ -8,6 +8,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+//ì»´íŒŒì¼ ì˜µì…˜ : gcc -o -m32 -mpreferred-stack-boundary=2 -no-pie master_card master_card.c 
+
 double master_key;
 char name[100];
 int guest_key=1;
@@ -24,50 +26,61 @@ unsigned int init() {
 	setvbuf(stdin, 0, 2, 0);
 	setvbuf(stderr, 0, 2, 0);
 	memset(name, 0, 0x64);
-	srand((unsigned int)time(0));
 	master_key = rand();
-	return alarm(0x1fu);
+	return alarm(0x10u);
 }
+void press(){
+	__asm(
+//		"push %ebp;"
+		"mov %ebx, %ecx;"
+		"mov %eax, %edx;"
+		"push %edx;"
+		"add %eax, 0x100;"
+		"nop;"
+		"push %ebp;"
+		"push %ebx;"
+		"mov %eax, %ebp;"
+		"sub %esp, 0x20;"
+		"add %ebp, 0x10;"
+		"add %ebx, 0x100;"
 
+	);
+}
 int get_point() {
 	char name1[100] = {};
-	int num = 0;
-	printf("´ç½ÅÀÇ ÀÌ¸§Àº ¹«¾ùÀÔ´Ï±î?(input name only english)\n");
-	read(0, &name1, 0x64);
+	int num = 0, point;
+	printf("ë‹¹ì‹ ì˜ ì´ë¦„ì€ ë¬´ì—‡ì…ë‹ˆê¹Œ?(input name only english)\n");
+	point = read(0, &name1, 0x64);
 	strcpy(name, name1);
-	printf("%s´Ô, ´ç½Å ÀÌ¸§ÀÇ Á¡¼ö´Â!!!\n", name);
-	for (int i = 0; i < (strlen(name)); i++)
-	{
-		//name[i%strlen(name)] ^= i;
-		num += (int)(name[i]);
-	}
+	printf("%së‹˜, ë‹¹ì‹  ì´ë¦„ì˜ ì ìˆ˜ëŠ”!!!\n", name);
+//	sleep(0.5);
 	if (num == 0)
 	{
-		printf("¿À·ù!¿À·ù!¿À·ù!");
+		printf("ì˜¤ë¥˜!ì˜¤ë¥˜!ì˜¤ë¥˜!");
 		exit(1);
 	}
-	printf("%dÁ¡ÀÔ´Ï´Ù!!\n", num % 100);
-	if (num % 100 == 50) {
-		printf("¹İÀÌ¶óµµ °¡´Â ´ç½Å!! ÈÇ¸¢ÇÏ±º¿ä?!?!\n");
-		return num%100;
+	printf("%dì ì…ë‹ˆë‹¤!!\n", num % 100);
+	if (point % 100 == 50) {
+		printf("ë°˜ì´ë¼ë„ ê°€ëŠ” ë‹¹ì‹ !! í›Œë¥­í•˜êµ°ìš”?!?!\n");
+		return point%100;
 	}
-	else if (0 < (num % 100)) {
-		if ((num % 100) < 50)
-			printf("½Ç¸ÁÇÒ°Ç ¾ø¾î¿ä ±×Àú Á¦°¡ ´õ ÈÇ¸¢ÇÒ »ÓÀÎ°É¿ä?!?\n");
+	else if (0 < (point % 100)) {
+		if ((point % 100) < 50)
+			printf("ì‹¤ë§í• ê±´ ì—†ì–´ìš” ê·¸ì € ì œê°€ ë” í›Œë¥­í•  ë¿ì¸ê±¸ìš”?!?\n");
 		else
-			printf("ÀÌº¸´Ù ´õ ÈÇ¸¢ÇÑ ÀÌ¸§Àº µé¾îº¸Áö ¸øÇß¾î¿ä...\n");
-		return num%100;
+			printf("ì´ë³´ë‹¤ ë” í›Œë¥­í•œ ì´ë¦„ì€ ë“¤ì–´ë³´ì§€ ëª»í–ˆì–´ìš”...\n");
+		return point%100;
 	}
 	else {
-		printf("100Á¡ÀÌ¶ó°í¿ä? °ÅÁş¸»Ä¡Áö ¸»¾Æ¿ä... ´ç½ÅÀÇ ÁøÂ¥ ÀÌ¸§À» ¾Ë·ÁÁÖ¼¼¿ä!!!\n");
-		return num%100;
+		printf("100ì ì´ë¼ê³ ìš”? ê±°ì§“ë§ì¹˜ì§€ ë§ì•„ìš”... ë‹¹ì‹ ì˜ ì§„ì§œ ì´ë¦„ì„ ì•Œë ¤ì£¼ì„¸ìš”!!!\n");
+		return point%100;
 	}
 }
 void comment() {
 	printf("1. get_point\n");
 	printf("2. lucky_chance!\n");
-	printf("3. ¿­·Á¶ó Âü±ú~!\n");
-	printf("4. ±ÇÇÑ¾ò±â!\n");
+	printf("3. ì—´ë ¤ë¼ ì°¸ê¹¨~!\n");
+	printf("4. ê¶Œí•œì–»ê¸°!\n");
 }
 int call();
 int have_auth(int point) {
@@ -102,12 +115,6 @@ int lucky_chance() {
 	__asm(
 			"NOP;"
 			"NOP;"
-			"NOP;"
-			"NOP;"
-			"NOP;"
-			"NOP;"
-			"NOP;"
-			"NOP;"
 	     );
 	
 }
@@ -117,12 +124,7 @@ void win() {
 }
 
 int call() {
-        if (name[0] == '\x00')
-        {
-                printf("ÃÊ´ë¹ŞÁö ¸øÇÑ ¼Õ´ÔÀÔ´Ï´Ù.\n");
-                exit(1);
-        }
-        printf("%s´Ô, ¹æ¹®À» È¯¿µÇÕ´Ï´Ù.\n", name);
+        printf("%së‹˜, ë°©ë¬¸ì„ í™˜ì˜í•©ë‹ˆë‹¤.\n", name);
 }
 
 void open_door(int a) {
@@ -135,7 +137,7 @@ int main() {
 	int i = 0;
 	int num = 0;
 	int auth;
-	double point; //card == key°ªÀÓ
+	double point; //card == keyê°’ì„
 
 	while(1){
 		comment();
@@ -143,11 +145,11 @@ int main() {
 		
 		if (num == 1)
 		{
-			point = get_point(); // ¿©±â¼­ point ÁöÁ¤
+			point += get_point(); // ì—¬ê¸°ì„œ point ì§€ì •
 		}
 		else if (num == 2)
 		{
-			point = lucky_chance();
+			point += lucky_chance();
 		}
 		else if (num == 3)
 		{
