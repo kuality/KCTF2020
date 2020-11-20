@@ -54,7 +54,7 @@ int get_point() {
 	strcpy(name, name1);
 	printf("%s님, 당신 이름의 점수는!!!\n", name);
 //	sleep(0.5);
-	if (num == 0)
+	if (point == 0)
 	{
 		printf("오류!오류!오류!");
 		exit(1);
