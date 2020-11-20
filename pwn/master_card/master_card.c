@@ -8,13 +8,11 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-//컴파일 옵션 : gcc -o -m32 -mpreferred-stack-boundary=2 -no-pie master_card master_card.c 
-
 double master_key;
 char name[100];
 int guest_key=1;
 int suppppper_key=2;
-int (*hello)();
+void (*hello)();
 
 unsigned int init() {
 	unsigned char buffer;
@@ -59,7 +57,7 @@ int get_point() {
 		printf("오류!오류!오류!");
 		exit(1);
 	}
-	printf("%d점입니다!!\n", num % 100);
+	printf("%d점입니다!!\n", point % 100);
 	if (point % 100 == 50) {
 		printf("반이라도 가는 당신!! 훌륭하군요?!?!\n");
 		return point%100;
@@ -82,10 +80,10 @@ void comment() {
 	printf("3. 열려라 참깨~!\n");
 	printf("4. 권한얻기!\n");
 }
-int call();
+void call();
 int have_auth(int point) {
-	char a;
-	scanf("%c", &a);
+	char a='y';
+	read(0, &a, 1);
 	if (a == 'y' || a == 'Y')
 	{	
 		if (point >= 999999999)
@@ -114,7 +112,6 @@ int lucky_chance() {
 	}
 	__asm(
 			"NOP;"
-			"NOP;"
 	     );
 	
 }
@@ -123,7 +120,7 @@ void win() {
         system("/bin/sh");
 }
 
-int call() {
+void call() {
         printf("%s님, 방문을 환영합니다.\n", name);
 }
 
@@ -137,7 +134,7 @@ int main() {
 	int i = 0;
 	int num = 0;
 	int auth;
-	double point; //card == key값임
+	int point = 0; 
 
 	while(1){
 		comment();
@@ -156,7 +153,7 @@ int main() {
 			open_door(point);
 		}
 		else if (num == 4) {
-			have_auth(auth);
+			have_auth(point);
 		}
 		else
 			exit(1);
