@@ -30,3 +30,12 @@ difficulty : easy
 
 author : Chozen
 ```
+
+### FUNFUN
+```
+difficulty : easy
+
+나는야 암산왕!!
+
+author : SParK
+```
