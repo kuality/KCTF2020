@@ -3,3 +3,5 @@ Diffie-Hellman Algorithm에서의 키는 q^ab (mod p)입니다.
 첨부한 find_key.py에서 673919365, 992233731에 매칭되는 a,b를 찾을수 있고 따라서 키를 구할 수 있습니다. 
 
 마지막으로 xor연산을 하면 flag가 나옵니다
+
+//문제오류로 그냥 string으로 바꾸고 게싱해도 나옵니다
