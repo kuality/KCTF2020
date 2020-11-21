@@ -1,5 +1,0 @@
-먼저 pem인증서파일에서 openssl을 통하여 n과 e를 구합니다.
->> openssl rsa -pubin -inform PEM -text -noout -in publickey.pem
-
-그리고 구한 n, e를 첨부한 RSAwienerHacker.py 코드에 넣으면 d를 구할 수 있고 d를 구했으면 복호화가 가능합니다.
-(출처 : https://github.com/pablocelayes/rsa-wiener-attack)
