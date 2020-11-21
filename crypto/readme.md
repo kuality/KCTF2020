@@ -6,7 +6,7 @@ Description:
 ```
 Difficulty: easy
 
-D'oH!
+D.H><
 
 Author: cm#9200
 ```
