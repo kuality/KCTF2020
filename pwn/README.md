@@ -27,3 +27,12 @@ Dormammu! I've come to bargain.
 
 author : SParK
 ```
+
+### ez_pwn3
+```
+difficulty : easy
+
+CCCCAAAANNNNAAAARRRRYYYY
+
+author : SParK
+```
