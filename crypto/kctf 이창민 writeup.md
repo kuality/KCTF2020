@@ -128,12 +128,12 @@ CRYPTO
    r.recvuntil("INPUT PASSCODE")
    for x in range(10)
    	for y in range(0x6a, 0x7a):
-       	betime = time.time()
-       	r.sendline(chr(y)+"\n")
-     	    r.recvuntil("try again")
-       	aftime = time.time()
-       	if(aftime - betime < 1.7):
-           	f_pw += chr(y)
+       		betime = time.time()
+       		r.sendline(chr(y)+"\n")
+     	        r.recvuntil("try again")
+       		aftime = time.time()
+       		if(aftime - betime < 1.7):
+           		f_pw += chr(y)
    r.sendline(f_pw)
    
    
@@ -176,6 +176,11 @@ CRYPTO
    ㅅ ㅆ ㅇ ㅈ ㅊ ㅋ ㅌ ㅍ ㅎ ㄱ ㄲ ㄳ ㄴ ㄵ ㄶ ㄷ ㄹ ㄺ ㄻ ㄼ ㄽ ㄾ ㄿ ㅀ ㅁ ㅂ ㅄ (종성)
    ```
 
+decode 
+   나를위해서눈물도참아야했던
+   그동안에넌얼마나힘이들었니
+   천년이가도난너를잊을수없어
+   {사랑했지때문에}
    KCTF{사랑했기때문에}
 
    
