@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-//gcc -m32 -mpreferred-stack-boundary=2 -z execstack -no-pie -fno-stack-protector -o potato potato.c
+//gcc -m32 -mpreferred-stack-boundary=2 -z execstack -no-pie -fstack-protector-all -o potato potato.c
 
 unsigned int init() {
 	setvbuf(stdout, 0, 2, 0);
